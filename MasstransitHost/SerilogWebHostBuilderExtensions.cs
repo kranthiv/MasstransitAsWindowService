@@ -12,6 +12,7 @@ namespace MasstransitHost
     {
         /// <summary>
         /// Sets Serilog as the logging provider.
+        /// Copied from https://github.com/serilog/serilog-aspnetcore/blob/dev/src/Serilog.AspNetCore/SerilogWebHostBuilderExtensions.cs
         /// </summary>
         /// <param name="builder">The web host builder to configure.</param>
         /// <param name="logger">The Serilog logger; if not supplied, the static <see cref="Serilog.Log"/> will be used.</param>
@@ -21,7 +22,7 @@ namespace MasstransitHost
         /// <param name="providers">A <see cref="LoggerProviderCollection"/> registered in the Serilog pipeline using the
         /// <c>WriteTo.Providers()</c> configuration method, enabling other <see cref="ILoggerProvider"/>s to receive events. By
         /// default, only Serilog sinks will receive events.</param>
-        /// <returns>The web host builder.</returns>
+        /// <returns>The host builder.</returns>
         public static IHostBuilder UseSerilog(
             this IHostBuilder builder,
             Serilog.ILogger logger = null,
